@@ -1,6 +1,9 @@
 package com.inventoryproject;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +18,6 @@ public class Inventory {
 		List<ArrayList<String>> lines = fileService.getFileContent(Path.of("data.txt"));
 		
 		// Change input data String -> Objects:
-		// eg: Product firstProduct = new Product(0, "My Book", 10, 1);
 		ArrayList<Product> productObjects = new ArrayList<>();
 		boolean isFirstLine = true;
 		for (ArrayList<String> line : lines) {
@@ -40,19 +42,36 @@ public class Inventory {
 		        float price = Float.parseFloat(propertiesArrayList.get(3));
 		        
 		        // Create new Object and add to list:
-		        Product product = new Product(id, name, quantity, price)
+		        Product product = new Product(id, name, quantity, price);
 				productObjects.add(product);
 		       
 			}
 		}
-		System.out.println(productObjects);
 		
 		// Collect necessary information by iterating through objects:
+		ArrayList<Product> filteredObjects = new ArrayList<>();
+		for (Product product: productObjects) {
+			if (product.getPrice() > .99 && product.getPrice() < 100) {
+				if (product.getQuantity() < 20) {
+					filteredObjects.add(product);
+				}
+				
+			}
+			if (product.getPrice() >= 101 && product.getQuantity() <= 10) {
+				filteredObjects.add(product);
+			}
+		}
 		
+		// Collect items into writable format and print to output.txt:
+		Path fileDestination = Path.of("output.txt");
+		List<String> linesToWrite = new ArrayList<>();
+		for (Product product : filteredObjects) {
+			linesToWrite.add(product.toString());
+        }
+		Files.write(fileDestination, linesToWrite, StandardCharsets.UTF_8);
 		
-		// Export relevant data into output file:
+		System.out.println("Please check output.txt file for items that need to be reordered");
 		
-//		System.out.println(lines);
 	}
 
 }

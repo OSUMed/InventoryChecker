@@ -43,7 +43,7 @@ public class Product {
 	}
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", quantity=" + quantity + ", price=" + price + "]";
+		return "Product [id=" + id + ", name=" + name + ", quantity=" + quantity + " needs to be reordered";
 	}
 	
 }

@@ -30,7 +30,7 @@ public class FileService {
 			line.add(data.get(i));	
 			lines.add(line);
 		}
-//		System.out.println(lines);
+		
 		return lines;
 
 	}
