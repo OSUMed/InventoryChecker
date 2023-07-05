@@ -20,7 +20,7 @@ public class FileService {
 	public String testMethod() {
 		return "Hello from File Service";
 	}
-	public List<String> printFileContentsToConsole(Path path) throws IOException{
+	public List<String> getFileContent(Path path) throws IOException{
 		System.out.println("The inserted path is " + path);
 		List<String> lines = Files.readAllLines(path);
 		System.out.println(lines);
