@@ -1,0 +1,61 @@
+id,name,quantity,price
+1,Smartphone,15,299.99
+2,Bluetooth Speaker,5,49.99
+3,Wireless Earbuds,30,79.99
+4,Laptop,12,899.99
+5,Smart Watch,3,199.99
+6,External Hard Drive,25,79.99
+7,4K TV,8,999.99
+8,Tablet,0,199.99
+9,Headphones,50,149.99
+10,Gaming Console,2,499.99
+11,Portable Charger,20,29.99
+12,Smart Home Hub,15,129.99
+13,Wireless Mouse,40,19.99
+14,Bluetooth Earphones,10,59.99
+15,Monitor,6,249.99
+16,USB Flash Drive,35,9.99
+17,Printer,4,159.99
+18,Fitness Tracker,22,89.99
+19,Webcam,7,69.99
+20,Wireless Keyboard,18,39.99
+21,Power Bank,23,49.99
+22,VR Headset,2,199.99
+23,Wireless Router,30,79.99
+24,External SSD,12,149.99
+25,Portable Projector,5,299.99
+26,Graphic Tablet,15,119.99
+27,Wireless Charging Pad,40,29.99
+28,Smart Scale,10,79.99
+29,Noise-Canceling Headphones,6,249.99
+30,Desktop Computer,3,999.99
+31,Action Camera,20,149.99
+32,Wireless Gaming Mouse,15,59.99
+33,Bluetooth Keyboard,35,39.99
+34,Wireless Earbuds with Charging Case,4,79.99
+35,Wireless Speaker,22,89.99
+36,USB-C Docking Station,7,69.99
+37,Portable SSD,18,99.99
+38,Smart Thermostat,23,149.99
+39,Wireless Gaming Controller,2,49.99
+40,Wireless Printer,30,149.99
+41,Smart Doorbell,12,199.99
+42,Smart Refrigerator,5,999.99
+43,Smart Lock,15,199.99
+44,Bluetooth Headset,40,49.99
+45,Gaming Keyboard,10,149.99
+46,Wireless Webcam,6,79.99
+47,Wireless Mouse and Keyboard Combo,35,59.99
+48,Bluetooth FM Transmitter,4,29.99
+49,Wireless Router and Modem Combo,22,99.99
+50,Wireless Earbuds with Noise Cancellation,18,149.99
+51,Portable Monitor,23,199.99
+52,Smart Plug,2,19.99
+53,Smart TV,30,499.99
+54,Wireless Gaming Headset,12,199.99
+55,Wireless Charging Stand,5,39.99
+56,Smart Light Bulbs,15,69.99
+57,Bluetooth Car Kit,40,29.99
+58,Gaming Mouse,10,79.99
+59,Bluetooth Speaker with Built-in Mic,6,149.99
+60,Wireless Keyboard and Mouse Combo,35,59.99
