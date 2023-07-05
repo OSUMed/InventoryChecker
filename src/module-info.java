@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author srim
+ *
+ */
+module InventoryChecker {
+}
