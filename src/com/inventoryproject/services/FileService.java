@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.ArrayList;
 
 public class FileService {
 	private static FileService fileService = null;
@@ -20,10 +21,16 @@ public class FileService {
 	public String testMethod() {
 		return "Hello from File Service";
 	}
-	public List<String> getFileContent(Path path) throws IOException{
+	public ArrayList<ArrayList<String>> getFileContent(Path path) throws IOException{
 		System.out.println("The inserted path is " + path);
-		List<String> lines = Files.readAllLines(path);
-		System.out.println(lines);
+		ArrayList<String> data = (ArrayList<String>) Files.readAllLines(path);
+		ArrayList<ArrayList<String>> lines = new ArrayList<ArrayList<String>>();
+		for (int i = 0; i < data.size(); i++) {
+			ArrayList<String> line = new ArrayList<>();
+			line.add(data.get(i));	
+			lines.add(line);
+		}
+//		System.out.println(lines);
 		return lines;
 
 	}
