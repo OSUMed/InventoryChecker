@@ -1,11 +1,13 @@
 package com.inventoryproject.services;
 
 public class Product {
+	// Fields are Private to enforce encapsulation: 
 	private int id;
 	private String name;
 	private int quantity;
 	private float price;
 	
+	// Constructor to initialize the Product object:
 	public Product(int id, String name, int quantity, float price) {
 		super();
 		this.id = id;
@@ -13,6 +15,8 @@ public class Product {
 		this.quantity = quantity;
 		this.price = price;
 	}
+	
+	// Public getters and setters for each property:
 	public int getId() {
 		return id;
 	}
