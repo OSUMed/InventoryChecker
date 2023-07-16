@@ -6,8 +6,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.inventoryproject.services.*;
+
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class Inventory {
 
 	public static void main(String[] args) throws IOException {		
@@ -22,9 +25,11 @@ public class Inventory {
 
 		// Collect necessary information by filtering:
 		List<Product> filteredObjects = filterProductObjects(productObjects);		
+
+		// Uncomment to do via Stream API instead:
+//		List<Product> productObjects = parseProductObjectsStream(lines);
+//		List<Product> filteredObjects = filterProductObjectsUsingStream(productObjects);		
 		
-//		List<Product> filteredObjectsUsingStream = filterProductObjectsUsingStream(productObjects);		
-		System.out.println(filteredObjects.size());
 		// Collect items into writable format and print to output.txt:
 		Path fileDestination = Path.of("output.txt");
 		List<String> linesToWrite = new ArrayList<>();
@@ -36,6 +41,7 @@ public class Inventory {
 		System.out.println("Please check output.txt file for items that need to be reordered");
 		
 	}
+	
     /**
      * Parses the lines of inventory data and creates a list of Product objects.
      *
@@ -77,28 +83,6 @@ public class Inventory {
 				
 	}
 	
-	/**
-	 * Filters the list of products based on specified criteria.
-	 *
-	 * @param products The list of products to filter.
-	 * @return The filtered list of products.
-	 */
-	private static List<Product> filterProductObjects1(List<Product> productObjects){
-		ArrayList<Product> filteredObjects = new ArrayList<>();
-		for (Product product: productObjects) {
-			if (product.getPrice() > .99 && product.getPrice() < 100) {
-				if (product.getQuantity() < 20) {
-					filteredObjects.add(product);
-				}
-				
-			}
-			if (product.getPrice() >= 101 && product.getQuantity() <= 10) {
-				filteredObjects.add(product);
-			}
-		}
-		return filteredObjects;
-	}
-	
     /**
      * Filters the list of products based on specified criteria:
      *
@@ -138,5 +122,22 @@ public class Inventory {
 	private static boolean reorderPriceAbove100(float price, int quantity) {
 		return price >= 101 && quantity <= 10;
 	}
-
+	
+	/**
+	 * Repeating Parsing and Filtering objectives by instead using the Stream API
+	 */
+	
+    /**
+     * Filters the list of products based on specified criteria using Stream API:
+     *
+     * @param products The list of products to filter.
+     * @return The filtered list of products.
+     */
+	private static List<Product> filterProductObjectsUsingStream(List<Product> productObjects){
+		Stream<Product> filteredStream = productObjects.stream()
+				.filter(product->reorderPriceUnder100(product.getPrice(), product.getQuantity())
+						|| reorderPriceAbove100(product.getPrice(), product.getQuantity()));
+		return filteredStream.collect(Collectors.toList());
+	}
+	
 }
