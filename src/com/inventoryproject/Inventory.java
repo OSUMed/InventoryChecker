@@ -20,7 +20,7 @@ public class Inventory {
 		// Collect inventory data:
 		List<ArrayList<String>> lines = fileService.getFileContent(Path.of("data.txt"));
 		
-		// Collect input data String -> Objects
+		// Collect input data String -> Objects:
 		List<Product> productObjects = parseProductObjects(lines);
 
 		// Collect necessary information by filtering:
@@ -126,6 +126,33 @@ public class Inventory {
 	/**
 	 * Repeating Parsing and Filtering objectives by instead using the Stream API
 	 */
+	
+	
+	/**
+     * Parses the lines of inventory data and creates a list of Product objects using Stream API.
+     *
+     * @param lines The lines of inventory data.
+     * @return The list of Product objects.
+     */
+	private static List<Product> parseProductObjectsUsingStream(List<ArrayList<String>> lines){
+		Stream<Product> filteredStream = lines.stream()
+				.flatMap(line -> line.stream())
+				.skip(1)
+	            .map(line -> {
+	                String[] propertiesList = line.split(",");
+	                int id = Integer.parseInt(propertiesList[0]);
+	                String name = propertiesList[1];
+	                int quantity = Integer.parseInt(propertiesList[2]);
+	                float price = Float.parseFloat(propertiesList[3]);
+	                
+	                // Return transformed map object into growing stream:
+	                return new Product(id, name, quantity, price);
+	            });
+				
+		return filteredStream.collect(Collectors.toList());
+	}
+	
+	
 	
     /**
      * Filters the list of products based on specified criteria using Stream API:
