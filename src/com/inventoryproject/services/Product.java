@@ -9,7 +9,7 @@ public class Product {
 	
 	// Constructor to initialize the Product object:
 	public Product(int id, String name, int quantity, float price) {
-		super();
+		super();	
 		this.id = id;
 		this.name = name;
 		this.quantity = quantity;

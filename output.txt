@@ -1,29 +1,29 @@
-Product [id=2, name=Bluetooth Speaker, quantity=5 needs to be reordered
-Product [id=5, name=Smart Watch, quantity=3 needs to be reordered
-Product [id=7, name=4K TV, quantity=8 needs to be reordered
-Product [id=8, name=Tablet, quantity=0 needs to be reordered
-Product [id=10, name=Gaming Console, quantity=2 needs to be reordered
-Product [id=14, name=Bluetooth Earphones, quantity=10 needs to be reordered
-Product [id=15, name=Monitor, quantity=6 needs to be reordered
-Product [id=17, name=Printer, quantity=4 needs to be reordered
-Product [id=19, name=Webcam, quantity=7 needs to be reordered
-Product [id=20, name=Wireless Keyboard, quantity=18 needs to be reordered
-Product [id=22, name=VR Headset, quantity=2 needs to be reordered
-Product [id=25, name=Portable Projector, quantity=5 needs to be reordered
-Product [id=28, name=Smart Scale, quantity=10 needs to be reordered
-Product [id=29, name=Noise-Canceling Headphones, quantity=6 needs to be reordered
-Product [id=30, name=Desktop Computer, quantity=3 needs to be reordered
-Product [id=32, name=Wireless Gaming Mouse, quantity=15 needs to be reordered
-Product [id=34, name=Wireless Earbuds with Charging Case, quantity=4 needs to be reordered
-Product [id=36, name=USB-C Docking Station, quantity=7 needs to be reordered
-Product [id=37, name=Portable SSD, quantity=18 needs to be reordered
-Product [id=39, name=Wireless Gaming Controller, quantity=2 needs to be reordered
-Product [id=42, name=Smart Refrigerator, quantity=5 needs to be reordered
-Product [id=45, name=Gaming Keyboard, quantity=10 needs to be reordered
-Product [id=46, name=Wireless Webcam, quantity=6 needs to be reordered
-Product [id=48, name=Bluetooth FM Transmitter, quantity=4 needs to be reordered
-Product [id=52, name=Smart Plug, quantity=2 needs to be reordered
-Product [id=55, name=Wireless Charging Stand, quantity=5 needs to be reordered
-Product [id=56, name=Smart Light Bulbs, quantity=15 needs to be reordered
-Product [id=58, name=Gaming Mouse, quantity=10 needs to be reordered
-Product [id=59, name=Bluetooth Speaker with Built-in Mic, quantity=6 needs to be reordered
+Product [id=2, name=Bluetooth Speaker, quantity=5] needs to be reordered
+Product [id=5, name=Smart Watch, quantity=3] needs to be reordered
+Product [id=7, name=4K TV, quantity=8] needs to be reordered
+Product [id=8, name=Tablet, quantity=0] needs to be reordered
+Product [id=10, name=Gaming Console, quantity=2] needs to be reordered
+Product [id=14, name=Bluetooth Earphones, quantity=10] needs to be reordered
+Product [id=15, name=Monitor, quantity=6] needs to be reordered
+Product [id=17, name=Printer, quantity=4] needs to be reordered
+Product [id=19, name=Webcam, quantity=7] needs to be reordered
+Product [id=20, name=Wireless Keyboard, quantity=18] needs to be reordered
+Product [id=22, name=VR Headset, quantity=2] needs to be reordered
+Product [id=25, name=Portable Projector, quantity=5] needs to be reordered
+Product [id=28, name=Smart Scale, quantity=10] needs to be reordered
+Product [id=29, name=Noise-Canceling Headphones, quantity=6] needs to be reordered
+Product [id=30, name=Desktop Computer, quantity=3] needs to be reordered
+Product [id=32, name=Wireless Gaming Mouse, quantity=15] needs to be reordered
+Product [id=34, name=Wireless Earbuds with Charging Case, quantity=4] needs to be reordered
+Product [id=36, name=USB-C Docking Station, quantity=7] needs to be reordered
+Product [id=37, name=Portable SSD, quantity=18] needs to be reordered
+Product [id=39, name=Wireless Gaming Controller, quantity=2] needs to be reordered
+Product [id=42, name=Smart Refrigerator, quantity=5] needs to be reordered
+Product [id=45, name=Gaming Keyboard, quantity=10] needs to be reordered
+Product [id=46, name=Wireless Webcam, quantity=6] needs to be reordered
+Product [id=48, name=Bluetooth FM Transmitter, quantity=4] needs to be reordered
+Product [id=52, name=Smart Plug, quantity=2] needs to be reordered
+Product [id=55, name=Wireless Charging Stand, quantity=5] needs to be reordered
+Product [id=56, name=Smart Light Bulbs, quantity=15] needs to be reordered
+Product [id=58, name=Gaming Mouse, quantity=10] needs to be reordered
+Product [id=59, name=Bluetooth Speaker with Built-in Mic, quantity=6] needs to be reordered

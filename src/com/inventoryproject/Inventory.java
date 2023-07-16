@@ -17,37 +17,8 @@ public class Inventory {
 		// Collect inventory data:
 		List<ArrayList<String>> lines = fileService.getFileContent(Path.of("data.txt"));
 		
-		// Change input data String -> Objects:
-		ArrayList<Product> productObjects = new ArrayList<>();
-		boolean isFirstLine = true;
-		for (ArrayList<String> line : lines) {
-			for (String properties : line) {
+		List<Product> productObjects = parseProductObjects(lines);
 				
-				// Skip Headers:
-				if (isFirstLine) {
-					isFirstLine = false;
-					continue;
-				}
-				
-				// Create List of strings and change to format ArrayList:
-				String[] propertiesList = properties.split(",");
-				ArrayList<String> propertiesArrayList = new ArrayList<>();
-				for (String item: propertiesList)
-					propertiesArrayList.add(item);
-				
-		        // Access elements by index using get
-				int id = Integer.parseInt(propertiesArrayList.get(0));
-				String name = propertiesArrayList.get(1);
-				int quantity = Integer.parseInt(propertiesArrayList.get(2));
-		        float price = Float.parseFloat(propertiesArrayList.get(3));
-		        
-		        // Create new Object and add to list:
-		        Product product = new Product(id, name, quantity, price);
-				productObjects.add(product);
-		       
-			}
-		}
-		
 		// Collect necessary information by iterating through objects:
 		ArrayList<Product> filteredObjects = new ArrayList<>();
 		for (Product product: productObjects) {
@@ -73,5 +44,38 @@ public class Inventory {
 		System.out.println("Please check output.txt file for items that need to be reordered");
 		
 	}
-
+	public static List<Product> parseProductObjects(List<ArrayList<String>> lines){
+		// Change input data String -> Objects:
+		ArrayList<Product> productObjects = new ArrayList<>();
+		boolean isFirstLine = true;
+		for (ArrayList<String> line : lines) {
+			for (String properties : line) {
+				
+				// Skip Headers:
+				if (isFirstLine) {
+					isFirstLine = false;
+					continue;
+				}
+				
+				// Create List of strings and change to format ArrayList:
+				String[] propertiesList = properties.split(",");
+				ArrayList<String> propertiesArrayList = new ArrayList<>();
+				for (String item: propertiesList)
+					propertiesArrayList.add(item);
+				
+		        // Access elements by index:
+				int id = Integer.parseInt(propertiesArrayList.get(0));
+				String name = propertiesArrayList.get(1);
+				int quantity = Integer.parseInt(propertiesArrayList.get(2));
+		        float price = Float.parseFloat(propertiesArrayList.get(3));
+		        
+		        // Create new Object and add to list:
+		        Product product = new Product(id, name, quantity, price);
+				productObjects.add(product);
+		       
+			}
+		}
+		return productObjects;
+				
+	}
 }
