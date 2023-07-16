@@ -3,6 +3,7 @@ Product [id=5, name=Smart Watch, quantity=3] needs to be reordered
 Product [id=7, name=4K TV, quantity=8] needs to be reordered
 Product [id=8, name=Tablet, quantity=0] needs to be reordered
 Product [id=10, name=Gaming Console, quantity=2] needs to be reordered
+Product [id=11, name=Portable Charger, quantity=20] needs to be reordered
 Product [id=14, name=Bluetooth Earphones, quantity=10] needs to be reordered
 Product [id=15, name=Monitor, quantity=6] needs to be reordered
 Product [id=17, name=Printer, quantity=4] needs to be reordered

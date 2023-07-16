@@ -23,6 +23,8 @@ public class Inventory {
 		// Collect necessary information by filtering:
 		List<Product> filteredObjects = filterProductObjects(productObjects);		
 		
+//		List<Product> filteredObjectsUsingStream = filterProductObjectsUsingStream(productObjects);		
+		System.out.println(filteredObjects.size());
 		// Collect items into writable format and print to output.txt:
 		Path fileDestination = Path.of("output.txt");
 		List<String> linesToWrite = new ArrayList<>();
@@ -34,6 +36,12 @@ public class Inventory {
 		System.out.println("Please check output.txt file for items that need to be reordered");
 		
 	}
+    /**
+     * Parses the lines of inventory data and creates a list of Product objects.
+     *
+     * @param lines The lines of inventory data.
+     * @return The list of Product objects.
+     */
 	private static List<Product> parseProductObjects(List<ArrayList<String>> lines){
 		// Change input data String -> Objects:
 		ArrayList<Product> productObjects = new ArrayList<>();
@@ -68,7 +76,14 @@ public class Inventory {
 		return productObjects;
 				
 	}
-	private static List<Product> filterProductObjects(List<Product> productObjects){
+	
+	/**
+	 * Filters the list of products based on specified criteria.
+	 *
+	 * @param products The list of products to filter.
+	 * @return The filtered list of products.
+	 */
+	private static List<Product> filterProductObjects1(List<Product> productObjects){
 		ArrayList<Product> filteredObjects = new ArrayList<>();
 		for (Product product: productObjects) {
 			if (product.getPrice() > .99 && product.getPrice() < 100) {
@@ -83,4 +98,45 @@ public class Inventory {
 		}
 		return filteredObjects;
 	}
+	
+    /**
+     * Filters the list of products based on specified criteria:
+     *
+     * @param products The list of products to filter.
+     * @return The filtered list of products.
+     */
+	private static List<Product> filterProductObjects(List<Product> productObjects){
+		ArrayList<Product> filteredObjects = new ArrayList<>();
+		for (Product product: productObjects) {
+			if (reorderPriceUnder100(product.getPrice(), product.getQuantity()) || 
+					reorderPriceAbove100(product.getPrice(), product.getQuantity())){
+				filteredObjects.add(product);
+			}
+		}
+		return filteredObjects;
+	}
+	
+	/**
+	 * Checks if the price of a product needs reordering:
+	 * If price in range 99 cents to 100 dollars, reorder item if quantity is 
+	 * under 20
+	 * @param price The price of the product.
+	 * @param quantity The number of the quantity.
+	 * @return true if the product needs reordering, false otherwise.
+	 */
+	private static boolean reorderPriceUnder100(float price, int quantity) {
+		return price > .99 && price < 101 && quantity <= 20;
+	}
+	
+	/**
+	 * Checks if the price of a product needs reordering:
+	 * If price is above 100 dollars, reorder item if quantity is under 10
+	 * @param price The price of the product.
+	 * @param quantity The number of the quantity.
+	 * @return true if the product needs reordering, false otherwise.
+	 */
+	private static boolean reorderPriceAbove100(float price, int quantity) {
+		return price >= 101 && quantity <= 10;
+	}
+
 }
