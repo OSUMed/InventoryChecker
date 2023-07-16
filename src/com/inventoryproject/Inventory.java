@@ -17,21 +17,11 @@ public class Inventory {
 		// Collect inventory data:
 		List<ArrayList<String>> lines = fileService.getFileContent(Path.of("data.txt"));
 		
+		// Collect input data String -> Objects
 		List<Product> productObjects = parseProductObjects(lines);
-				
-		// Collect necessary information by iterating through objects:
-		ArrayList<Product> filteredObjects = new ArrayList<>();
-		for (Product product: productObjects) {
-			if (product.getPrice() > .99 && product.getPrice() < 100) {
-				if (product.getQuantity() < 20) {
-					filteredObjects.add(product);
-				}
-				
-			}
-			if (product.getPrice() >= 101 && product.getQuantity() <= 10) {
-				filteredObjects.add(product);
-			}
-		}
+
+		// Collect necessary information by filtering:
+		List<Product> filteredObjects = filterProductObjects(productObjects);		
 		
 		// Collect items into writable format and print to output.txt:
 		Path fileDestination = Path.of("output.txt");
@@ -44,7 +34,7 @@ public class Inventory {
 		System.out.println("Please check output.txt file for items that need to be reordered");
 		
 	}
-	public static List<Product> parseProductObjects(List<ArrayList<String>> lines){
+	private static List<Product> parseProductObjects(List<ArrayList<String>> lines){
 		// Change input data String -> Objects:
 		ArrayList<Product> productObjects = new ArrayList<>();
 		boolean isFirstLine = true;
@@ -77,5 +67,20 @@ public class Inventory {
 		}
 		return productObjects;
 				
+	}
+	private static List<Product> filterProductObjects(List<Product> productObjects){
+		ArrayList<Product> filteredObjects = new ArrayList<>();
+		for (Product product: productObjects) {
+			if (product.getPrice() > .99 && product.getPrice() < 100) {
+				if (product.getQuantity() < 20) {
+					filteredObjects.add(product);
+				}
+				
+			}
+			if (product.getPrice() >= 101 && product.getQuantity() <= 10) {
+				filteredObjects.add(product);
+			}
+		}
+		return filteredObjects;
 	}
 }
