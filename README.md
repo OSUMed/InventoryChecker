@@ -6,7 +6,7 @@ Given file data.txt, accomplish the following:
 1. parse products using File I/O
 2. Use OOP Class principles with the Singleton System Design approach
 3. Find the products that need to be reordered
-4. Output it into a file
+4. Output products that need to be reordered into a file
 5. Repeat Assignment using Stream API
 
 Criteria for reordering:
