@@ -41,9 +41,12 @@ public class Product {
 	public void setPrice(float price) {
 		this.price = price;
 	}
+	
+	// Override the toString for printing:
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", quantity=" + quantity + " needs to be reordered";
+	    return String.format("Product [id=%s, name=%s, quantity=%d] needs to be reordered", id, name, quantity);
 	}
+
 	
 }

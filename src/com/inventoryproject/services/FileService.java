@@ -7,10 +7,13 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class FileService {
+	
 	private static FileService fileService = null;
 	private FileService() {
 		
 	}
+	
+	// Singleton so only one instance made:
 	public static FileService getInstance() {
 		if (fileService == null) {
 			fileService = new FileService();
@@ -18,11 +21,8 @@ public class FileService {
 		return fileService;		
 	}
 	
-	public String testMethod() {
-		return "Hello from File Service";
-	}
+	// Reads files and inserts its contents into a data structure:
 	public ArrayList<ArrayList<String>> getFileContent(Path path) throws IOException{
-		System.out.println("The inserted path is " + path);
 		ArrayList<String> data = (ArrayList<String>) Files.readAllLines(path);
 		ArrayList<ArrayList<String>> lines = new ArrayList<ArrayList<String>>();
 		for (int i = 0; i < data.size(); i++) {
